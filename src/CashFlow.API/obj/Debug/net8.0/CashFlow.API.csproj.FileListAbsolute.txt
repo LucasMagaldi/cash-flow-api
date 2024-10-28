@@ -40,3 +40,4 @@ C:\Users\Lucas\Dev\cashFlow\src\CashFlow.API\obj\Debug\net8.0\refint\CashFlow.AP
 C:\Users\Lucas\Dev\cashFlow\src\CashFlow.API\obj\Debug\net8.0\CashFlow.API.pdb
 C:\Users\Lucas\Dev\cashFlow\src\CashFlow.API\obj\Debug\net8.0\CashFlow.API.genruntimeconfig.cache
 C:\Users\Lucas\Dev\cashFlow\src\CashFlow.API\obj\Debug\net8.0\ref\CashFlow.API.dll
+C:\Users\Lucas\Dev\cashFlow\src\CashFlow.API\bin\Debug\net8.0\FluentValidation.dll
