@@ -1,7 +1,7 @@
 ﻿using CashFlow.Application.UseCases.Expenses.Register;
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
-using Microsoft.AspNetCore.Http;
+using CashFlow.Exception.ExceptionBase;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CashFlow.API.Controllers
@@ -19,15 +19,13 @@ namespace CashFlow.API.Controllers
 
                 var response = useCase.Execute(request);
                 return Created(string.Empty, response);
-            } catch (ArgumentException ex)
+            } catch (ErrorOnValidationException ex)
             {
-                var errorMessageResponse = new ResponseError();
-                errorMessageResponse.ErrorMessage = ex.Message;
+                var errorMessageResponse = new ResponseError(ex.Errors);
                 return BadRequest(errorMessageResponse);
             } catch
             {
-                var errorMessageResponse = new ResponseError();
-                errorMessageResponse.ErrorMessage = "Internal Server Error";
+                var errorMessageResponse = new ResponseError("Internal Server Error");
                 return StatusCode(StatusCodes.Status500InternalServerError, errorMessageResponse);
             }
 
